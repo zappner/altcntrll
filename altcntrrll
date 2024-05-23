@@ -21,12 +21,6 @@ if game["Players"]["LocalPlayer"]["UserId"] == getgenv().Settings["HostID"] then
     local vu = game:GetService("VirtualUser"); game:GetService("Players").LocalPlayer.Idled:connect(function() vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
     for i=1,2 do print("hi"); end settings()["Rendering"]["QualityLevel"] = "Level01"; settings()["Physics"]["PhysicsEnvironmentalThrottle"] = 1; UserSettings():GetService('UserGameSettings')["MasterVolume"] = 0; game:GetService("RunService"):Set3dRenderingEnabled(false)
 
-    task.spawn(function()
-        repeat task.wait() until game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
-        task.wait(0.1)
-        game:WaitForChild("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false); Client["Character"]["HumanoidRootPart"]["CFrame"] = CFrame.new(-870, -38, -586); loadstring(game:HttpGet("https://raw.githubusercontent.com/6mf/lua-scripts/main/AC"))()
-    end)
-
     local AnchorFlag
     getgenv().GRAV=192.2
 
