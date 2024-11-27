@@ -1,3 +1,5 @@
+};
+
 if game.PlaceId ~= 2788229376 then return end
 
 local Services = { ["P"] = game:GetService("Players"), ["CG"] = game:GetService('CoreGui'), ["S"] = game:GetService("Stats"), ["RS"] = game:GetService("RunService"), ["HTTP"] = game:GetService("HttpService"), ["TS"] = game:GetService("TweenService"), ["RPS"] = game:GetService("ReplicatedStorage"), ["TPS"] = game:GetService("TeleportService"), ["UIS"] = game:GetService("UserInputService"), ["MPS"] = game:GetService("MarketplaceService") };
@@ -19,7 +21,13 @@ if game["Players"]["LocalPlayer"]["UserId"] == getgenv().Settings["HostID"] then
 
     local _warlock0666=Instance.new("ScreenGui")local Frame=Instance.new("Frame")local TextLabel=Instance.new("TextLabel")_warlock0666.Name="_warlock0666"_warlock0666.Parent=game.CoreGui;Frame.Parent=_warlock0666;Frame.AnchorPoint=Vector2.new(0.5,0.5)Frame.BackgroundColor3=Color3.fromRGB(9,9,9)Frame.BorderSizePixel=0;Frame.Position=UDim2.new(0.5,0,0.5,0)Frame.Size=UDim2.new(1.10000002,0,1.10000002,0)TextLabel.Parent=Frame;TextLabel.AnchorPoint=Vector2.new(0.5,0.5)TextLabel.BackgroundColor3=Color3.fromRGB(13,13,13)TextLabel.BackgroundTransparency=1.000;TextLabel.BorderSizePixel=0;TextLabel.Position=UDim2.new(0.5,0,0.5,0)TextLabel.Size=UDim2.new(0.150000006,0,0.0500000007,0)TextLabel.Font=Enum.Font.Roboto;TextLabel.Text=tostring(game["Players"]["LocalPlayer"])TextLabel.TextColor3=Color3.fromRGB(68,68,68)TextLabel.TextScaled=true;TextLabel.TextSize=14.000;TextLabel.TextStrokeTransparency=0.000;TextLabel.TextWrapped=true
     local vu = game:GetService("VirtualUser"); game:GetService("Players").LocalPlayer.Idled:connect(function() vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
-    for i=1,2 do print("hi"); end settings()["Rendering"]["QualityLevel"] = "Level01"; settings()["Physics"]["PhysicsEnvironmentalThrottle"] = 1; UserSettings():GetService('UserGameSettings')["MasterVolume"] = 0; game:GetService("RunService"):Set3dRenderingEnabled(false)
+    for i=1,2 do setfpscap(Settings["FPS"]); end settings()["Rendering"]["QualityLevel"] = "Level01"; settings()["Physics"]["PhysicsEnvironmentalThrottle"] = 1; UserSettings():GetService('UserGameSettings')["MasterVolume"] = 0; game:GetService("RunService"):Set3dRenderingEnabled(false)
+
+    task.spawn(function()
+        repeat task.wait() until game.Players.LocalPlayer.Character:WaitForChild("FULLY_LOADED_CHAR")
+        task.wait(0.1)
+        game:WaitForChild("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false); Client["Character"]["HumanoidRootPart"]["CFrame"] = CFrame.new(-870, -38, -586); loadstring(game:HttpGet("https://raw.githubusercontent.com/6mf/lua-scripts/main/AC"))()
+    end)
 
     local AnchorFlag
     getgenv().GRAV=192.2
@@ -50,8 +58,7 @@ if game["Players"]["LocalPlayer"]["UserId"] == getgenv().Settings["HostID"] then
     };
 
     local setups={
-        bank={"-390, 24, -330.5","-380, 24, -330.5","-370, 24, -330.5","-360, 24, -330.5","-390, 24, -320.5","-380, 24, -320.5","-370, 24, -320.5","-360, 24, -320.5","-390, 24, -310.5","-380, 24, -310.5","-370, 24, -310.5","-360, 24, -310.5","-390, 24, -300.5","-380, 24, -300.5","-370, 24, -300.5","-360, 24, -300.5","-390, 24, -290.5","-380, 24, -290.5","-370, 24, -290.5","-360, 24, -290.5","-390, 24, -280.5","-380, 24, -280.5","-370, 24, -280.5","-360, 24, -280.5","-390, 24, -270.5","-380, 24, -270.5","-370, 24, -270.5","--360, 24, -270.5","-391, 24, -260.5","-381, 24, -260.5","-371, 24, -260.5","-361, 24, -260.5","-390, 24, -250.5","-380, 24, -250.5","-370, 24, -250.5","-909, -39, -619","-360, 24, -250.5","-390, 24, -240.5"},
-        club={"-292, -8, -406","-282, -8, -406","-272, -8, -406","-262, -8, -406","-252, -8, -406","-242, -8, -406","-292, -8, -398","-282, -8, -398","-272, -8, -398","-262, -8, -398","-252, -8, -398","-242, -8, -398","-232, -8, -398","-292, -8, -390","-282, -8, -390","-272, -8, -390","-262, -8, -390","-252, -8, -390","-242, -8, -390","-292, -8, -381","-282, -8, -381","-272, -8, -381","-262, -8, -381","-252, -8, -381","-242, -8, -381","-292, -8, -373","-282, -8, -373","-272, -8, -373","-262, -8, -373","-252, -8, -373","-242, -8, -373","-292, -8, -365","-282, -8, -365","-272, -8, -365","-262, -8, -365","-252, -8, -365","-242, -8, -365","-292, -8, -357"},
+        admin={"-895, -39, -555","-895, -39, -568","-895, -39, -581","-895, -39, -594","-895, -39, -607","-880, -39, -555","-880, -39, -568","-880, -39, -581","-880, -39, -594","-880, -39, -607","-865, -39, -555","-865, -39, -568","-865, -39, -581","-865, -39, -594","-865, -39, -607","-850, -39, -555","-850, -39, -568","-850, -39, -581","-850, -39, -594","-850, -39, -607","-910, -39, -556","-910, -39, -569","-910, -39, -582","-909, -39, -595","-910, -39, -607","-832, -39, -607","-832, -39, -594","-832, -39, -582","-832, -39, -569","-832, -39, -556","-831, -39, -620","-849, -39, -619","-864, -38, -618","-880, -38, -618","-894, -39, -618","-909, -39, -619","-832, -32, -530","-872, -32, -531"}
     };
 
     local hostsetups={ 
@@ -199,7 +206,3 @@ if game["Players"]["LocalPlayer"]["UserId"] == getgenv().Settings["HostID"] then
         end
     end) -- warlock#0666
 end;
-
-game:GetService("RunService"):Set3dRenderingEnabled(false)
-settings().Rendering.QualityLevel = 1
-UserSettings().GameSettings.MasterVolume = 0
